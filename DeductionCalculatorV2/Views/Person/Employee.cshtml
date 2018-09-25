@@ -1,0 +1,25 @@
+﻿@model DeductionCalculatorV2.Models.Employee
+@{
+    ViewBag.Title = "CreateEmployee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Employee @Model.FirstName @Model.LastName</h2>
+
+<p>Dependents:</p>
+<ul>
+    @foreach (var dependent in @Model.Dependents)
+    {
+        <li>
+            @dependent.FirstName @dependent.LastName
+        </li>
+    }
+    <li>
+        @Html.ActionLink("Add Dependent", "AddDependent", "Person", new { employeeId = @Model.EmployeeId }, new {@class = "btn btn-primary"})
+    </li>
+</ul>
+
+<div>
+    @Html.ActionLink("Calculate Paycheck Details", "Index","Calculate", new { employeeId = @Model.EmployeeId }, new { @class = "btn btn-primary" })
+</div>
+

@@ -1,0 +1,23 @@
+﻿@model DeductionCalculatorV2.Models.PayrollDataViewModel
+@{
+    ViewBag.Title = "CalculatePayrollData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>The costs for @Model.Employee.FirstName @Model.Employee.LastName:</h2>
+
+<ul>
+    <li>
+        <p>Total Pay Per Year: @Model.PayrollData.TotalPayPerYear</p>
+        <p>Total Pay Per Pay Period: @Model.PayrollData.PaycheckGross</p>
+    </li>
+    <li>
+        <p>Total Deductions Per Year: @Model.PayrollData.TotalDeductionsPerYear</p>
+        <p>Total Deductions Per Pay Period: @Model.PayrollData.TotalDeductionsPerPaycheck</p>
+    </li>
+</ul>
+
+<h3>
+    @Html.ActionLink("Calculate another user", "AddEmployee", "Person",
+    null, new { @class = "btn btn-primary" })
+</h3>

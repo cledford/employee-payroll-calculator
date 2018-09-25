@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Welcome to Employee Deduction Calculator 9000";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Welcome to the Employeetron Deduction Calculator 9000!</h2>
+
+<p>Please follow the link to get started:</p>
+<p>@Html.ActionLink("Employee Input", "AddEmployee", "Person",
+    null, new { @class = "btn btn-primary" })</p>
