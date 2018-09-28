@@ -1,4 +1,6 @@
-﻿namespace DeductionCalculatorV2.Models
+﻿using System;
+
+namespace DeductionCalculatorV2.Models
 {
     public class PayrollData
     {
@@ -11,7 +13,7 @@
             int paychecksPerYear)
         {
             PaycheckGross = paycheckGross;
-            TotalDeductionsPerPaycheck = totalDeductionsPerPaycheck;
+            TotalDeductionsPerPaycheck = Math.Round(totalDeductionsPerPaycheck,2);
             TotalDeductionsPerYear = totalDeductionsPerPaycheck*paychecksPerYear;
             TotalPayPerYear = paycheckGross*paychecksPerYear;
         }
