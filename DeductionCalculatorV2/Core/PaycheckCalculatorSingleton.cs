@@ -42,8 +42,8 @@ namespace DeductionCalculatorV2.Core
             // NEXT: Use factory pattern with some sort of data-driven mechanism to populate this
             PaycheckCalculator = 
                 new PaycheckCalculatorSingleton(
-                    1000d,
-                    500d,
+                    1000d / NumberOfPaychecks,
+                    500d / NumberOfPaychecks,
                     2000d);
         }
 
